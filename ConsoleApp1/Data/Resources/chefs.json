@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Emil",
+    "address": "Vognmagergade 11, 1148 København K",
+    "joinedOn": "2009-06-15T13:45:30",
+    "dateOfBirth": "2009-06-15T13:45:30",
+    "specialization": "Italiensk cuisine",
+    "otherExpertise": "Fransk cuisine"
+  },
+  {
+    "name": "Laura",
+    "address": "Lautrupparken 42, 2750 Ballerup",
+    "joinedOn": "2009-06-15T13:45:30",
+    "dateOfBirth": "2009-06-15T13:45:30",
+    "specialization": "Ungarsk cuisine",
+    "otherExpertise": "Spansk cuisine"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Per",
+    "address": "Lautrupparken 42, 2750 Ballerup",
+    "joinedOn": "2009-06-15T13:45:30",
+    "allowedCustomerCallTaking": false
+  },
+  {
+
+    "name": "Søren",
+    "address": "Lautrupparken 42, 2750 Ballerup",
+    "joinedOn": "2009-06-15T13:45:30",
+    "allowedCustomerCallTaking": true
+  }
+]

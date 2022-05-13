@@ -1,35 +1,61 @@
-﻿using ConsoleApp1.models;
-using Newtonsoft.Json;
+﻿using ConsoleApp1.Data.Repositories;
+using ConsoleApp1.Processing.Services;
+using ConsoleApp1.Processing.Utils;
 
 namespace ConsoleApp1
 {
     public static class Processor
     {
-        public static List<IEmployee> ImportEmployees()
-        {
-            return LoadFromJson<List<IEmployee>>("Data/employees.json");
-        }
+        private static bool _firstTime = true;
 
-        public static List<Customer> ImportCustomers()
+        public static void Navigation()
         {
-            return LoadFromJson<List<Customer>>("Data/customers.json");
-        }
-
-        private static T LoadFromJson<T>(string filePath)
-        {
-            using var reader = new StreamReader(filePath);
-            var json = reader.ReadToEnd();
-            if (json != null)
+            if (_firstTime)
             {
-                var obj = JsonConvert.DeserializeObject<T>(json);
-
-                if (obj != null)
-                {
-                    return obj;
-                }
+                InitializeRepositories();
             }
 
-            throw new FileLoadException($"Could not load {filePath} correctly.");
+            ConsoleHelpers.ShowMainMenu();
+
+            var keyInfo = Console.ReadKey();
+            Console.Clear();
+
+            if (keyInfo.Key == ConsoleKey.D1)
+            {
+                EmployeeService.ShowEmployeeInformation();
+                ConsoleHelpers.ShowReturnToMainMenu();
+            }
+
+            if (keyInfo.Key == ConsoleKey.D2)
+            {
+                BookingService.BookInitialize();
+                ConsoleHelpers.ShowReturnToMainMenu();
+            }
+
+            if (keyInfo.Key == ConsoleKey.D3)
+            {
+                BookingService.ShowBookings();
+            }
+
+            if (keyInfo.Key == ConsoleKey.D4)
+            {
+                BookingService.ShowBookingsMenu();
+            }
+
+            if (keyInfo.Key == ConsoleKey.D5)
+            {
+                CustomerService.ShowCustomerInformation();
+                ConsoleHelpers.ShowReturnToMainMenu();
+            }
+        }
+
+        private static void InitializeRepositories()
+        {
+            BookingRepository.ImportBooking();
+            CustomerRepository.ImportCustomers();
+            EmployeeRepository.ImportEmployees();
+
+            _firstTime = false;
         }
     }
 }

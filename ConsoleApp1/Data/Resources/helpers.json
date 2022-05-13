@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Mads",
+    "address": "Lautrupparken 42, 2750 Ballerup",
+    "joinedOn": "2009-06-15T13:45:30",
+    "dateOfBirth": "2009-06-15T13:45:30",
+    "specialization": "Japansk cuisine",
+    "otherExpertise": "Kinesisk cuisine"
+
+  },
+  {
+    "name": "Pablo",
+    "address": "Lautrupparken 42, 2750 Ballerup",
+    "joinedOn": "2009-06-15T13:45:30",
+    "dateOfBirth": "2009-06-15T13:45:30",
+    "specialization": "Spansk cuisine",
+    "otherExpertise": "Portugisisk cuisine"
+
+  }
+]
